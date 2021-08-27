@@ -15,30 +15,55 @@ This effort focuses on the usage of PacBio HiFi long reads and proximity ligatio
 for the generation of high quality and higly contiguos genome assemblies.
 
 
-## Pipeline
+## Pipelines
 
-1. Pre-assembly quality control and data validation
-    - PacBio HiFi  
-        - K-mer counting with meryl
-        - Genome size, heterozygosity and repeat content estimation with GenomeScope2.0
-        - Coverage validation
-    - HiC/OmniC
-        - Library QC with [Dovetail Genomics tools](https://github.com/dovetail-genomics/dovetail_tools)
-2. *de novo* assembly (contigging)
-    - Contig assembly with HiFiasm
-3. Purge haplotigs: haplotypic duplications and contig overlaps.
-    - alignment of HiFi data with minimap2 and purging with purge_dups
-4. Scaffolding
-    - Alignments with [Arima Genomics Mapping Pipeline](https://github.com/ArimaGenomics/mapping_pipeline) 
-    - Scaffolding with [SALSA](https://www.github.com/marbl/SALSA)
-5. Checking for misassemblies
-    - Generation of coverage tracks (HiFi and HiC/OmniC) with bedtools
-    - Generation of interactive contact maps
-        -  HiGlass
-        -  PretextSuite
-6. Gap closing with [YAGCloser](https://www.github.com/merlyescalona/yagcloser)
-7. Organalle assembly
-    - Mitogenome assembly pipeline or [MitoHiFi](https://github.com/marcelauliano/MitoHiFi)
-    - Chloroplast assembly pipeline
-8. Organelle filtering from nuclear assemblies
-9. Contamination screening with Blobtools 
+### Pre-assembly quality control and data validation
+
+- PacBio HiFi  
+    - PacBio Adapter filtering  
+    - K-mer counting with meryl
+    - Genome size, heterozygosity and repeat content estimation
+    - Coverage validation
+- HiC/OmniC
+    - Library QC with Dovetail Genomics tools
+ 
+### *de novo* assembly (contigging)
+
+- Contig assembly with HiFiasm
+
+### Purge haplotigs: haplotypic duplications and contig overlaps.
+
+- Alignment of HiFi data with minimap2 and purging with purge_dups
+
+### Scaffolding
+
+- Alignments with [Arima Genomics Mapping Pipeline](https://github.com/ArimaGenomics/mapping_pipeline) 
+- Scaffolding with SALSA
+
+### Checking for misassemblies
+
+- Generation of coverage tracks (HiFi and HiC/OmniC) with bedtools
+- Generation of interactive contact maps
+    -  HiGlass
+    -  PretextSuite
+
+### Gap closing 
+
+- [YAGCloser](https://www.github.com/merlyescalona/yagcloser)
+
+### Organalle assembly
+
+- Mitogenome assembly pipeline or [MitoHiFi](https://github.com/marcelauliano/MitoHiFi)
+- Chloroplast assembly pipeline
+
+### Curation
+
+- Organelle filtering from nuclear assemblies
+- Contamination screening with Blobtools 
+
+
+### Metrics / stats
+- Contiguity metrics (contig and scaffold N50)
+- BUSCO scores
+- per base quality 
+- frameshift errors
