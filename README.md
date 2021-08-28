@@ -6,6 +6,8 @@ California Conservation Genomics Project (CCGP) repository for the genome assemb
 
 - Overview
 - Pipeline
+    - Versioning
+-  
 
 ## Overview
 
@@ -15,9 +17,11 @@ This effort focuses on the usage of PacBio HiFi long reads and proximity ligatio
 for the generation of high quality and higly contiguos genome assemblies.
 
 
-## Pipelines
+## Pipeline
 
-### Pre-assembly quality control and data validation
+### Workflows
+
+#### Pre-assembly quality control and data validation
 
 - PacBio HiFi  
     - PacBio Adapter filtering  
@@ -63,7 +67,15 @@ for the generation of high quality and higly contiguos genome assemblies.
 
 
 ### Metrics / stats
+
 - Contiguity metrics (contig and scaffold N50)
 - BUSCO scores
 - per base quality 
 - frameshift errors
+
+
+## Versioning
+
+- V1.0
+
+
