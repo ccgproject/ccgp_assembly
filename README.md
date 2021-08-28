@@ -60,7 +60,7 @@ for the generation of high quality and higly contiguos genome assemblies.
 - Mitogenome assembly pipeline or [MitoHiFi](https://github.com/marcelauliano/MitoHiFi)
 - Chloroplast assembly pipeline
 
-### Curation
+### Contamination screening
 
 - Organelle filtering from nuclear assemblies
 - Contamination screening with Blobtools 
