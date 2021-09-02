@@ -51,7 +51,7 @@
 ### Genome quality assessment
 
 | Purpose | Program | Version | 
-|--------|----------|---------|
+|:-------|---------:|--------:|
 | Basic assembly metrics | [QUAST](https://github.com/ablab/quast) | `5.0.2` | 
 | Assembly completeness | [BUSCO](https://busco.ezlab.org/) | `5.0.0` |
 | k-mer based assembly evaluatiob | [Merqury](https://github.com/marbl/merqury) |  `1` | 
