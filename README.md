@@ -6,7 +6,7 @@ California Conservation Genomics Project (CCGP) repository for the genome assemb
 
 - Overview
 - Pipeline
-    - Versioning
+    - [Versioning](versions/README.md)
 
 
 ## Overview
@@ -23,37 +23,37 @@ for the generation of high quality and higly contiguos genome assemblies.
 
 #### Pre-assembly quality control and data validation
 
-- PacBio HiFi  
+- [PacBio HiFi](preasm/hifi)  
     - PacBio Adapter filtering  
     - K-mer counting with meryl
     - Genome size, heterozygosity and repeat content estimation
     - Coverage validation
-- HiC/OmniC
+- [HiC/OmniC](preasm/omnic)
     - Library QC with Dovetail Genomics tools
  
 ### *de novo* assembly (contigging)
 
 - Contig assembly with HiFiasm
 
-### Purge haplotigs: haplotypic duplications and contig overlaps.
+### Purge haplotigs: haplotypic duplications and contig overlaps
 
 - Alignment of HiFi data with minimap2 and purging with purge_dups
 
 ### Scaffolding
 
-- Alignments with [Arima Genomics Mapping Pipeline](https://github.com/ArimaGenomics/mapping_pipeline) 
+- Alignments with Arima Genomics Mapping Pipeline
 - Scaffolding with SALSA
 
 ### Checking for misassemblies
 
-- Generation of coverage tracks (HiFi and HiC/OmniC) with bedtools
+- Generation of coverage tracks (HiFi and HiC/OmniC)
 - Generation of interactive contact maps
     -  HiGlass
     -  PretextSuite
 
 ### Gap closing 
 
-- [YAGCloser](https://www.github.com/merlyescalona/yagcloser)
+- Using YAGCloser - based on gap spanning of long reads
 
 ### Organalle assembly
 
@@ -76,6 +76,6 @@ for the generation of high quality and higly contiguos genome assemblies.
 
 ## Versioning
 
-- V1.0
+- [V1.0](versions/V1.0.md)
 
 

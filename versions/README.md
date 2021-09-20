@@ -2,7 +2,23 @@
 
 ## Overview
 
+![Overview diagram - CCGP Assembly Pipeline V1.0](img/ccgp_assembly.pipeline.V1_0.png)
+
+## Workflows 
+
+- [Pre-assembly quality control and validation]()
+- [*de novo* assembly]()
+- [Purge haplotigs]()
+- [Scaffolding]()
+- [Checking for misassemblies]()
+- [Gap closing]()
+- [Organelle assembly]()
+- [Contamination screening and curation]()
+
 ## Software
+
+Almost all of the links will send you to the corresponding repository. 
+The rest of the links correspond to the main documentation web site of the tool.
 
 ### Assembly
 
@@ -41,7 +57,6 @@
 | Long read alignment | [pbmm2](https://github.com/PacificBiosciences/pbmm2) | `1.4.0` | 
 | Variant calling and consensus |  [bcftools](https://github.com/samtools/bcftools) |  `1.11-5-g9c15769` | 
 | Extraction of sequences | [seqtk](https://github.com/lh3/seqtk) | `1.3-r115-dirty` | 
-| Circular-aware long-read alignment | racon |  `1.4.19` | 
 | Sequence polishing | [raptor](https://github.com/isovic/raptor) | `0.20.3-171e0f1` | 
 | Circular-aware long-read alignment | [racon](https://github.com/isovic/racon) | `1.4.19` | 
 | Sequence alignment | [lastz](https://github.com/lastz/lastz) | `1.04.08` | 
@@ -51,10 +66,10 @@
 ### Genome quality assessment
 
 | Purpose | Program | Version | 
-|:-------|---------:|--------:|
+|:-------|:---------|--------:|
 | Basic assembly metrics | [QUAST](https://github.com/ablab/quast) | `5.0.2` | 
 | Assembly completeness | [BUSCO](https://busco.ezlab.org/) | `5.0.0` |
-| k-mer based assembly evaluatiob | [Merqury](https://github.com/marbl/merqury) |  `1` | 
+| k-mer based assembly evaluation | [Merqury](https://github.com/marbl/merqury) |  `1` | 
 | Contamination screening | [BlobToolKit](https://github.com/blobtoolkit/blobtools2) | `2.3.3` |
 
 
