@@ -162,10 +162,14 @@ meryl histogram ${REFNAME}.hifi.meryl | awk '{print $1,$2}' > ${REFNAME}.hifi.hi
 
 ```
 
-## Genome size, heterozygosity and repeat content estimation with [GenomeScope2.0](https://github.com/tbenavi1/genomescope2.0)
+## Genome size, heterozygosity and repeat content estimation
+
+We extract information of the HiFi reads to be able to validate the data we are generating. In addition, it allows us to generate and expectation of the genome assembly process
+by gaining infomarion about repeat content, genome size and heterozygosity.
+
 
 ### Requirements
-- [Genomescope2.0](https://github.com/tbenavi1/genomescope2.0)
+- [GenomeScope2.0](https://github.com/tbenavi1/genomescope2.0)
 
 ### Variables
 
