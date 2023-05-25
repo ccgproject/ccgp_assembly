@@ -79,12 +79,13 @@ Color blocks:
 - Organelle filtering from nuclear assemblies
 - Contamination screening with Blobtools 
 
-### Metrics / stats
+### Metrics / stats / Others
 
 - Contiguity metrics (contig and scaffold N50)
 - BUSCO scores
 - per base quality 
 - Frameshift errors
+- Gap description
 
 ## Versioning
 
