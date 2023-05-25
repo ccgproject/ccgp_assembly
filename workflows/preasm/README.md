@@ -11,8 +11,6 @@
 - [HiC/OmniC](#omnic)
     - Library QC with Dovetail Genomics tools
 
-
-
 ## HiFi
 
 ### PacBio Adater filtering 
@@ -25,7 +23,9 @@ The first thing we need to do once we receive the PacBio HiFi data is to filter 
 - BLAST (V2.6)
 - samtools
 - bgzip 
-
+- Conda environment: 
+    - We have set up a conda environment that is able to load all the dependencies for BLAST (V2.6)
+    - Download from [here]()
 
 #### Description
 
@@ -38,15 +38,16 @@ The first thing we need to do once we receive the PacBio HiFi data is to filter 
 5. We generate an index of the FASTA file using `samtools faidx`
 
 
+
+#### Variables
+
+- `THREADS`: Number of threads that you will used to run the `BLAST` command.
+- `WD`: Working directory. This is a path.
+- `SEQDIR`: Path to directory where the HiFi sequencing data has been downloaded to. We are using only the `FASTA` Files. 
+- `DBpath="/usr/local/src/HiFiAdapterFilt/DB"`: Follow instructions from [HiFiAdapterFilt](https://github.com/sheinasim/HiFiAdapterFilt) to understand this path.
+
+
 Here's the code we use to run our HiFi adapter filtering:
-
-
-**Variables**
-`THREADS`: Number of threads that you will used to run the `BLAST` command.
-`WD`: Working directory. This is a path.
-`SEQDIR`: Path to directory where the HiFi sequencing data has been downloaded to. We are using only the `FASTA` Files. 
-`DBpath="/usr/local/src/HiFiAdapterFilt/DB"`: Follow instructions from [HiFiAdapterFilt](https://github.com/sheinasim/HiFiAdapterFilt) to understand this path.
-
 
 
 ```
