@@ -61,10 +61,14 @@ Color blocks:
 
 ### Checking for misassemblies
 
-- Generation of coverage tracks (HiFi and HiC/OmniC)
 - Generation of interactive contact maps
     -  HiGlass
     -  PretextSuite
+- Generation of tracks
+    - HiFi coverage
+    - HiC/OmniC coverage
+    - Genome assembly mappability
+    - Gap description
 
 ### Gap closing 
 
@@ -86,6 +90,8 @@ Color blocks:
 - per base quality 
 - Frameshift errors
 - Gap description
+- Genome mappability
+- Mapping quality
 
 ## Versioning
 
