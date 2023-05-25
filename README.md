@@ -23,7 +23,7 @@ Here the overview of our current pipeline:
 
 ## Pipeline overview
 
-There have been mulitple versions since the beginning of the project and this is an overview of how the pipeline has evolved.
+There have been multiple versions since the beginning of the project and this is an overview of how the pipeline has evolved.
 
 ![CCGP: Evolution of the assembly pipeline](https://github.com/ccgproject/ccgp_assembly/assets/3216007/659836c5-7eaf-40cf-b90c-eebbd2f47a1d)
 
