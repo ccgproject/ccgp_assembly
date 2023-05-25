@@ -7,7 +7,7 @@
     - [PacBio Adapter filtering using HiFiAdapterFilt](#pacbio-adapter-filtering)
     - [Coverage validation](#coverage-validation)
     - [K-mer counting](k--mer-counting)
-    - [Genome size, heterozygosity and repeat content estimation]()
+    - [Genome size, heterozygosity and repeat content estimation]#genome-size-heterozygosity-and-repeat-content-estimation)
 - [HiC/OmniC](#omnic)
     - Library QC with Dovetail Genomics tools
 
