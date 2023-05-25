@@ -54,7 +54,7 @@ Color blocks:
 
 - Alignment of HiFi data with minimap2 and purging with purge_dups
 
-### Scaffolding
+### [Scaffolding](https://github.com/ccgproject/ccgp_assembly/blob/main/workflows/scaffolding/README.md)
 
 - Alignments with Arima Genomics Mapping Pipeline
 - Scaffolding with SALSA
