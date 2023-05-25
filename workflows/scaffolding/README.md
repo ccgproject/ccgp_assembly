@@ -22,6 +22,7 @@
 - [`SALSA`](https://github.com/marbl/SALSA)
 - samtools
 - [`bamToBed` (from `bedtools`)](https://bedtools.readthedocs.io/en/latest/content/tools/bamtobed.html)
+- Conda environment for SALSA dependencies [here](https://github.com/ccgproject/ccgp_assembly/blob/main/workflows/conda_env/conda.env.salsa.yml)
 
 ## Code
  
