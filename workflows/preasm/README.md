@@ -194,50 +194,7 @@ by gaining infomarion about repeat content, genome size and heterozygosity.
 
 ## OmniC
 
-### Requirements
-
-#### Input
-
-- Reference genome  
-- OmniC sequencing data
-
-#### Software
-
-- Conda enviromnet with the dependencies for the Dovetail QC check.
-    - Download from [here](conda.env.dovetail.yml)
-###
-
-QC Pipeline
-Make library and sequence
-Prepare reference genome
-Search for genome of interest in /redser4/genomes or
-Find reference genome and download to servers /redser4/genomes/
-Look for related species in Ncbi taxonomy browser
-Download in .fna format
-Example: /redser4/genomes/Sunflower
-Index genome
-Command for indexing genomes "bwa index -a bwtsw <genome.fna>"
-Run command in genome directory
-Prepare to run script
-Sign in to Bigser.ucsc.edu, go to /scratch2/RechargeOmnic/ or PanGenome directory
-Create QC directory (ie. $ mkdir LoachMinnowQC)
-Make a new directory to store raw FastQ files in “mkdir Raw”
-Copy raw files from sequencing run directory in redser4 into your new Raw directory
-Make a new libs.txt file “ls raw | awk -F_ '{printf $1 FS $2 FS $3 "\n"}' | uniq > libs.txt” 
-Removes duplicates and unnecessary information (this is how the program titles output files) 
-Result should be a text file with something that looks like this: Hooleu-C-1_S241
-Edit file in text editor such as nano if this is not what you get. 
-Copy Dovetail script and Ed’s script into new QC directory from another recharge QC directory (Bulk_OmniC_QC.sh and SCS_EG_HL_OmniC_QC.sh)
-Edit bash script to include the correct Raw file location (input), output file location, libs.txt location and path to reference genome
-Example script below
-bash /usr/local/src/dovetail_tools/omni-c_qc.bash	/scratch2/RechargeOmnic/QCgenomes/Acroporatenuis/GCA_014633955.1_Aten_1.0_genomic.fna /redser4/raw/210309_NB551675_0090_AHNV32AFX2/pgl_RechargeOmniC_Batch1/Sacro1_S250_R1_001.fastq.gz /redser4/raw/210309_NB551675_0090_AHNV32AFX2/pgl_RechargeOmniC_Batch1/Sacro1_S250_R2_001.fastq.gz Acro Acro 10  > QC_Summary.txt
-Open a new screen
-Activate Conda environment
-Use command "conda activate dovetail"
-Run bash script
-Order of switches: reference genome, read1 fastq, read2 fastq, output prefix and then number of cores to use
-Look at data and make logical conclusions
-https://omni-c.readthedocs.io/en/latest/library_qc.html 
+We follow the instructions that have been set up and orgenized by [Dovetail Genomics](https://omni-c.readthedocs.io/en/latest/index.html).
 
 
 
