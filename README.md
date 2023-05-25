@@ -45,7 +45,7 @@ Color blocks:
 - HiC/OmniC
     - Library QC with Dovetail Genomics tools
  
-### *de novo* assembly (contigging)
+### [*de novo* assembly (contigging)](https://github.com/ccgproject/ccgp_assembly/tree/main/workflows/contig)
 
 - Contig assembly with HiFiasm
     - Depending on datasets available or ploidy, we are using single or HiC mode on HiFiasm. 
