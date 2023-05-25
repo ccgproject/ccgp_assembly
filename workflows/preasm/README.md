@@ -82,6 +82,43 @@ conda deactivate
 
 ## Coverage validation
 
+After filtering we calculate the expected coverage of our sample based on the length of the adapter-trimmed HiFi reads and the estimated genome size we have of a particular species.
+These steps will generate files for each sequencing file and an aggregate coverage.
+
+### Requirements
+
+- R
+
+### Variables
+
+- `WD`: Working directory
+- `ESTGENOMESIZE`: Estimated genome size for the species at hand
+
+```
+mkdir -p $WD/info
+
+# Getting coverage per SMRT cell after adapter-trimming
+for ccs in $(find ${WD}/seq/hifi/ -type f | grep filt.fasta.gz$); do
+    ccsbase=$(basename $ccs .filt.fasta.gz)
+    cat ${ccs}.fai | cut -f 2 | R -s -e 'data=scan(file("stdin")); sum(data)/'$ESTGENOMESIZE'' | cut -d " " -f 2 > ${WD}/info/${ccsbase}.coverage
+done
+
+# Getting coverage for all the HiFi data
+cat $WD/seq/hifi/*.filt.fasta.gz.fai \
+    | cut -f 2 | R -s -e 'data=scan(file("stdin")); sum(data)/'$ESTGENOMESIZE'' \
+    | cut -d " " -f 2 > ${WD}/info/total.coverage
+    
+# Generating a summary file of the HiFi read lengths (NG50, min, 1Q, median, mean, 3Q, max)
+
+cat $WD/seq/hifi/*.filt.fasta.gz.fai | cut -f 2 \
+    | R -s -e 'data=scan(file("stdin"));data_ordered=data[order(data,decreasing=T)];total=sum(data_ordered);n50=total/2;cummulative=cumsum(data_ordered);l50=which(cummulative>n50)[1]; c(l50,data_ordered[l50]); summary(data)' \
+    | cut -d " " -f 2- > $WD/info/hifi.len.summary
+
+```
+
+
+
+
 ## K-mer counting with [meryl](https://github.com/marbl/meryl)
 
 ## Genome size, heterozygosity and repeat content estimation with [GenomeScope2.0](https://github.com/tbenavi1/genomescope2.0)
