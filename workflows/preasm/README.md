@@ -6,8 +6,8 @@
 - [PacBio HiFi](#hifi)  
     - [PacBio Adapter filtering using HiFiAdapterFilt](#pacbio-adapter-filtering)
     - [Coverage validation](#coverage-validation)
-    - [K-mer counting with meryl](k--mer-counting-with-meryl)
-    - [Genome size, heterozygosity and repeat content estimation with GenomeScope2.0]()
+    - [K-mer counting](k--mer-counting)
+    - [Genome size, heterozygosity and repeat content estimation]()
 - [HiC/OmniC](#omnic)
     - Library QC with Dovetail Genomics tools
 
@@ -94,6 +94,8 @@ These steps will generate files for each sequencing file and an aggregate covera
 - `WD`: Working directory
 - `ESTGENOMESIZE`: Estimated genome size for the species at hand
 
+### Code
+
 ```
 mkdir -p $WD/info
 
@@ -117,11 +119,73 @@ cat $WD/seq/hifi/*.filt.fasta.gz.fai | cut -f 2 \
 ```
 
 
+## K-mer counting
+
+K-mer database required for estimation of genomic features
+
+### Requirements
+-  [meryl](https://github.com/marbl/meryl)
+
+### Assumptions
+
+- We assume to run this code that the HiFi data has gone through the adapter filtering step.
+- The directory hierarchy exists, and the HiFi data is under `$WD/seq/hifi`
+
+### Variables
+
+- `WD`: Working directory
+- `K`: K-mer size to generate the `meryl` database.
+- `REFNAME`: name of the assmebly. We generate the 
 
 
-## K-mer counting with [meryl](https://github.com/marbl/meryl)
+### Code
+
+```
+mkdir -p $WD/info/meryl
+cd $WD/info/meryl
+for ccs in $(find ${WD}/seq/hifi/ -type f | grep filt.fasta.gz$ ); do
+    ccsbase=$(basename $ccs .filt.fasta.gz)
+    if [[ ! -d "${ccsbase}.meryl" ]]; then
+        meryl k=$K count output ${ccsbase}.meryl $ccs &> ${ccsbase}.meryl.log
+    fi
+done
+
+if [[ -d "${REFNAME}.hifi.meryl" ]]; then
+    rm -rf ${REFNAME}.hifi.meryl
+fi
+
+# Agreggated meryl database
+meryl union-sum output ${REFNAME}.hifi.meryl *.meryl
+
+# Generating histogram for Genomescope2.0
+meryl histogram ${REFNAME}.hifi.meryl | awk '{print $1,$2}' > ${REFNAME}.hifi.hist
+
+```
 
 ## Genome size, heterozygosity and repeat content estimation with [GenomeScope2.0](https://github.com/tbenavi1/genomescope2.0)
 
+### Requirements
+- [Genomescope2.0](https://github.com/tbenavi1/genomescope2.0)
+
+### Variables
+
+- `WD`: Working directory
+- `K`: K-mer size used to generate the `meryl` database.
+- `REFNAME`: name of the assmebly. We generate the 
+
+### Assumptions
+
+- Given the scope and/or limitation of the projects, the code below is set up for diploid genomes, using the default parameters of Genomescope2.0. 
+- For haploid species we set up option `-p` to `1`.
+- We are assuming that the meryl database has been generated and exists under `$WD/info/meryl/${REFNAME}.hifi.hist`
+
+### Code
+
+```
+/path/to/genomescope2.0/genomescope.R -i $WD/info/meryl/${REFNAME}.hifi.hist \
+    -k $K \
+    # [-p 1] # Optional
+    -o genomescope &> genomescope.log 
+```
 
 ## OmniC
