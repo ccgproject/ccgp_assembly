@@ -35,14 +35,14 @@ Color blocks:
 
 ## Workflows
 
-### Pre-assembly quality control and data validation
+### [Pre-assembly quality control and data validation](https://github.com/ccgproject/ccgp_assembly/blob/main/workflows/preasm/README.md)
 
-- [PacBio HiFi](preasm/hifi)  
+- PacBio HiFi  
     - PacBio Adapter filtering  
     - K-mer counting with meryl
     - Genome size, heterozygosity and repeat content estimation
     - Coverage validation (calculation of expected coverage given the sequencing data
-- [HiC/OmniC](preasm/omnic)
+- HiC/OmniC
     - Library QC with Dovetail Genomics tools
  
 ### *de novo* assembly (contigging)
