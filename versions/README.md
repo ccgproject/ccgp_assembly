@@ -2,7 +2,7 @@
 
 ## Overview
 
-![Overview diagram - CCGP Assembly Pipeline V1.0](img/ccgp_assembly.pipeline.V1_0.png)
+![Overview diagram - CCGP Assembly Pipeline V1.0](https://github.com/ccgproject/ccgp_assembly/assets/3216007/f170e937-32df-4fe0-b2cf-7c46a58accfc)
 
 ## Workflows 
 
