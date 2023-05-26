@@ -84,7 +84,7 @@ Color blocks:
 - Organelle filtering from nuclear assemblies
 - Contamination screening with Blobtools 
 
-### [Metrics / stats / Others](https://github.com/ccgproject/ccgp_assembly/edit/main/workflows/metrics/README.md)
+### [Metrics / stats / Others](https://github.com/ccgproject/ccgp_assembly/blob/main/workflows/metrics/README.md)
 
 - Contiguity metrics (contig and scaffold N50)
 - BUSCO scores
