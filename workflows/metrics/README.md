@@ -38,6 +38,8 @@ b) k-mer completeness,
 
 > The k-mer completeness is calculated as the fraction of reliable k-mers in the read set that are also found in the assembly.
 
+🖥️ [how-to]()
+
 ## Functional completeness
 
 ### BUSCO scores
