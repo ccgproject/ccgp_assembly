@@ -34,8 +34,7 @@ We generate `pretext` contact maps too because it allow us to identify and solve
 
 ##### Software
 
-- PretextMap
-- PretextSnapshot
+- [PretextMap](https://github.com/wtsi-hpag/PretextMap)
 - samtools
 - Conda environment with the PretextSuite installed (download from [here](https://github.com/ccgproject/ccgp_assembly/blob/main/workflows/conda_env/conda.env.pretext.yml))
 
@@ -49,19 +48,49 @@ conda activate pretext
 samtools view -h -@ $THREADS $WD/aln/assembly.pairtools.bam \
     | PretextMap -o $WD/contact_maps/assembly.pairtools.pretext \
         --sortby length --sortorder descend &&
+
+conda deactivate
+```
+
+### Visualization
+
+#### Assumptions
+
+- Pretext map has been generated
+- There is a directory hierarchy starting at `WD`. Where:
+  - `WD/`
+    - `asm`: Assemblies
+    - `aln`: Alignments
+
+#### Requirements
+
+##### Input
+
+- [Pretext map](https://github.com/ccgproject/ccgp_assembly/tree/main/workflows/misassemblies#pretext-contact-maps)
+
+##### Software
+
+- [PretextSnapshot](https://github.com/wtsi-hpag/PretextSnapshot)
+- Conda environment with the PretextSuite installed (download from [here](https://github.com/ccgproject/ccgp_assembly/blob/main/workflows/conda_env/conda.env.pretext.yml))
+
+#### Code
+
+##### Variables
+
+- `WD`: Working directory
+
+```
+conda activate pretext
 PretextSnapshot -m $WD/contact_maps/assembly.pairtools.pretext \
         -c "Red 2" -r 12000 --gridColour "black" \
         --printSequenceNames \
         -o $WD/contact_maps/ \
         --minTexels 8 \
         --prefix "assembly_" \
-        --sequences "=full" &
+        --sequences "=full"
 conda deactivate
+
 ```
-
-### Visualization
-
-
 
 # Identification of misassemblies
 
