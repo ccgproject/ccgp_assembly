@@ -87,7 +87,7 @@ Color blocks:
 
 - Contiguity metrics (contig and scaffold N50)
 - BUSCO scores
-- per base quality 
+- per base quality / k-mer completeness 
 - Frameshift errors
 - Gap description
 - Genome mappability
