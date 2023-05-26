@@ -59,7 +59,7 @@ Color blocks:
 - Alignments with Arima Genomics Mapping Pipeline
 - Scaffolding with SALSA
 
-### Checking for misassemblies
+### [Checking for misassemblies](https://github.com/ccgproject/ccgp_assembly/tree/main/workflows/misassemblies)
 
 - Generation and visualization of contact maps
     -  HiGlass
