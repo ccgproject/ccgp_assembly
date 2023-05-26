@@ -109,3 +109,7 @@ Color blocks:
 [Shaffer HB, Toffelmier E, Corbett-Detig RB, Escalona M, Erickson B, Fiedler P, Gold M, Harrigan RJ, Hodges S, Luckau TK, Miller C, Oliveira DR, Shaffer KE, Shapiro B, Sork VL, Wang IJ (2022) ***Landscape genomics to enable conservation actions: the California Conservation Genomics Project.*** Journal of Heredity, 113 (6): 577–588, https://doi.org/10.1093/jhered/esac020](https://academic.oup.com/jhered/article/113/6/577/6565646)
 
 
+## References
+
+- [Rhie   A , McCarthy SA, Fedrigo O, Damas J, Formenti G, Koren S, Uliano-Silva M, Chow W, Fungtammasan A, Kim J, et al.   (2021). Towards complete and error-free genome assemblies of all vertebrate species.Nature. 592:737–746.](https://www.nature.com/articles/s41586-021-03451-0)
+
