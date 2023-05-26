@@ -61,14 +61,15 @@ Color blocks:
 
 ### Checking for misassemblies
 
-- Generation of interactive contact maps
+- Generation and visualization of contact maps
     -  HiGlass
+    - Generation of tracks
+        - HiFi coverage
+        - HiC/OmniC coverage
+        - Genome assembly mappability
+        - Gap description
     -  PretextSuite
-- Generation of tracks
-    - HiFi coverage
-    - HiC/OmniC coverage
-    - Genome assembly mappability
-    - Gap description
+
 
 ### Gap closing 
 
