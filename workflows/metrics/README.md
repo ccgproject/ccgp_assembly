@@ -44,6 +44,40 @@ b) k-mer completeness,
 
 ### BUSCO scores
 
+#### Assumptions
+There is a directory hierarchy from WD.
+
+- There is a directory hierarchy from `WD`.
+  - `WD/`:
+    - `asm/`: assemblies
+    - `info/`: assemblies
+
+#### Requirements
+
+##### Input
+- Genome assembly (`FASTA`)
+- Genome size
+
+### Software
+
+- Conda environment for `BUSCO` (download [here](https://github.com/ccgproject/ccgp_assembly/blob/main/workflows/conda_env/conda.env.busco5.yml))
+
+#### Code
+
+**Variables**
+- `BUSCODBPATH`: Path where we can access the databases if there have been downloaded before, or path to store the database if it is the first time using such database.
+- `THREADS`: Number of processors/threads that will be used to run `BUSCO`
+- `BUSCODB`: name of the database
+
+```
+conda activate busco5
+
+busco -f --download_path $BUSCODBPATH --datasets_version odb10 -c $THREADS -m geno -l $BUSCODB \
+        -i $WD/asm/assembly.fasta \
+        -o busco_assembly &> busco.log &
+conda deactivate
+```
+
 ### Frameshift errors
 
 ## Gap description 
