@@ -56,7 +56,10 @@ There is a directory hierarchy from WD.
 
 ##### Input
 - Genome assembly (`FASTA`)
-- Genome size
+- `WD`: Working directory
+- `BUSCODBPATH`: Path where we can access the databases if there have been downloaded before, or path to store the database if it is the first time using such database.
+- `THREADS`: Number of processors/threads that will be used to run `BUSCO`
+- `BUSCODB`: name of the database
 
 ### Software
 
@@ -64,10 +67,6 @@ There is a directory hierarchy from WD.
 
 #### Code
 
-**Variables**
-- `BUSCODBPATH`: Path where we can access the databases if there have been downloaded before, or path to store the database if it is the first time using such database.
-- `THREADS`: Number of processors/threads that will be used to run `BUSCO`
-- `BUSCODB`: name of the database
 
 ```
 conda activate busco5
