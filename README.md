@@ -13,15 +13,15 @@ California Conservation Genomics Project (CCGP) repository for the genome assemb
 
 ## Overview
 
-This repository contains scripts used for the reference genome assembly efforts of the CCGP. 
+This repository contains scripts used for the CCGP's reference genome assembly efforts. 
 
-CCGP reference genomes are assembled following a protocol adapted from [Rhie et al. (2021)](https://www.nature.com/articles/s41586-021-03451-0). Assemblies are comprised of PacBio HiFi long read data, which is scaffolded using proximity ligation/chromatin conformation capture (HiC or OmniC) (Dovetail Genomics). Our minimum target reference genome quality is 6.7.Q40, and in most cases we expect to reach 7.C.Q50 or better (see Table 1 in [Rhie et al. (2021)](https://www.nature.com/articles/s41586-021-03451-0)). 
+CCGP reference genomes are assembled following a protocol adapted from [Rhie et al. (2021)](https://www.nature.com/articles/s41586-021-03451-0). Assemblies comprise PacBio HiFi long read data, which is scaffolded using proximity ligation/chromatin conformation capture (HiC or OmniC) (Dovetail Genomics). Our minimum target reference genome quality is 6.7.Q40, and in most cases, we expect to reach 7.C.Q50 or better (see Table 1 in [Rhie et al. (2021)](https://www.nature.com/articles/s41586-021-03451-0)). 
 
-Here the overview of our current pipeline:
+Here is the overview of our current pipeline:
 
 ![CCGP: Overview of our current pipeline](https://github.com/ccgproject/ccgp_assembly/assets/3216007/6f652479-a407-47b0-87bb-d51ef6e06fd3)
 
-## Pipeline overview
+## Pipeline Overview
 
 There have been multiple versions since the beginning of the project and this is an overview of how the pipeline has evolved.
 
@@ -40,7 +40,7 @@ Color blocks:
 - PacBio HiFi  
     - PacBio Adapter filtering  
     - K-mer counting with meryl
-    - Genome size, heterozygosity and repeat content estimation
+    - Genome size, heterozygosity, and repeat content estimation
     - Coverage validation (calculation of expected coverage given the sequencing data
 - HiC/OmniC
     - Library QC with Dovetail Genomics tools
@@ -48,7 +48,7 @@ Color blocks:
 ### [*de novo* assembly (contigging)](https://github.com/ccgproject/ccgp_assembly/tree/main/workflows/contig)
 
 - Contig assembly with HiFiasm
-    - Depending on datasets available or ploidy, we are using single or HiC mode on HiFiasm. 
+    - We are using single or HiC mode on HiFiasm depending on the datasets available or ploidy. 
 
 ### Purge haplotigs: haplotypic duplications and contig overlaps
 
@@ -73,7 +73,7 @@ Color blocks:
 
 ### Gap closing 
 
-- Using YAGCloser - based on gap spanning of long reads
+- Using YAGCloser - based on gap-spanning of long reads
 
 ### Mitochondrial assembly
 
@@ -84,7 +84,7 @@ Color blocks:
 - Organelle filtering from nuclear assemblies
 - Contamination screening with Blobtools 
 
-### [Metrics / stats / Others](https://github.com/ccgproject/ccgp_assembly/blob/main/workflows/metrics/README.md)
+### [Metrics/stats/Others](https://github.com/ccgproject/ccgp_assembly/blob/main/workflows/metrics/README.md)
 
 - Contiguity metrics (contig and scaffold N50)
 - BUSCO scores
@@ -104,7 +104,7 @@ Color blocks:
 
 ## Learn more
 
-- For further information about our project and efforts please redirect to the CCGP [website](https://www.ccgproject.org/)
+- For further information about our project and efforts, please redirect to the CCGP [website](https://www.ccgproject.org/)
 - For more information about the project, you can also check this:
 
 [Shaffer HB, Toffelmier E, Corbett-Detig RB, Escalona M, Erickson B, Fiedler P, Gold M, Harrigan RJ, Hodges S, Luckau TK, Miller C, Oliveira DR, Shaffer KE, Shapiro B, Sork VL, Wang IJ (2022) ***Landscape genomics to enable conservation actions: the California Conservation Genomics Project.*** Journal of Heredity, 113 (6): 577–588, https://doi.org/10.1093/jhered/esac020](https://academic.oup.com/jhered/article/113/6/577/6565646)
