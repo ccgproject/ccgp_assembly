@@ -15,7 +15,7 @@
 
 ### PacBio Adater filtering 
 
-The first thing we need to do once we receive the PacBio HiFi data is to filter remnants of PacBio adapters. This process we have adapted from [HiFiAdapterFilt](https://github.com/sheinasim/HiFiAdapterFilt). We start from the `*.hifi_reads.fasta.gz` file that has been generated directly on the machine (Sequel II or Sequel IIe).
+Once we receive the PacBio HiFi data, the first thing we need to do is filter remnants of PacBio adapters. We have adapted this process from [HiFiAdapterFilt](https://github.com/sheinasim/HiFiAdapterFilt). We start from the `*.hifi_reads.fasta.gz` file generated directly on the machine (Sequel II or Sequel IIe).
 
 #### Requirements
 
@@ -24,16 +24,16 @@ The first thing we need to do once we receive the PacBio HiFi data is to filter 
 - samtools
 - bgzip 
 - Conda environment: 
-    - We have set up a conda environment that is able to load all the dependencies for BLAST (V2.6)
+    - We have set up a conda environment that can load all the dependencies for BLAST (V2.6)
     - Download `conda.env.ncbi216.yml` from [here.](https://github.com/ccgproject/ccgp_assembly/blob/main/workflows/conda_env/)
 
 #### Description
 
-1. `HiFiAdapterFilt` uses `BLAST` to find matches of the PacBio adapters in our FASTA file. The PacBio adapters are organized in a database (DB) that comes with the repository. This DB was generated with `BLAST v2.6`.
+1. `HiFiAdapterFilt` uses `BLAST` to find matches of the PacBio adapters in our FASTA file. The PacBio adapters are organized in a database (DB) with the repository. This DB was generated with `BLAST v2.6`.
     - The output is a file on BLAST format 6 (`-outfmt6`) (`*.contaminant.blastout`)
-2. The BLAST output is then filtered based on percentage identity and target/alignment size.
-    - This generates a file with a list of readnames (`*.blocklist`)
-3. Readnames from step 2 are then filtered out from the original FASTA file.
+2. The BLAST output is filtered based on percentage identity and target/alignment size.
+    - This generates a file with a list of read names (`*.blocklist`)
+3. Readnames from step 2 are filtered out from the original FASTA file.
 4. We use `bgzip` to compress the new filtered file
 5. We generate an index of the FASTA file using `samtools faidx`
 
@@ -41,9 +41,9 @@ The first thing we need to do once we receive the PacBio HiFi data is to filter 
 
 #### Variables
 
-- `THREADS`: Number of threads that you will used to run the `BLAST` command.
+- `THREADS`: Number of threads that you will use to run the `BLAST` command.
 - `WD`: Working directory. This is a path.
-- `SEQDIR`: Path to directory where the HiFi sequencing data has been downloaded to. We are using only the `FASTA` Files. 
+- `SEQDIR`: The path to the directory where the HiFi sequencing data has been downloaded. We are using only the `FASTA` Files. 
 - `DBpath="/usr/local/src/HiFiAdapterFilt/DB"`: Follow instructions from [HiFiAdapterFilt](https://github.com/sheinasim/HiFiAdapterFilt) to understand this path.
 
 
@@ -82,12 +82,12 @@ conda deactivate
 
 ## Coverage validation
 
-After filtering we calculate the expected coverage of our sample based on the length of the adapter-trimmed HiFi reads and the estimated genome size we have of a particular species.
+After filtering, we calculate the expected coverage of our sample based on the length of the adapter-trimmed HiFi reads and the estimated genome size of a particular species.
 These steps will generate files for each sequencing file and an aggregate coverage.
 
 ### Requirements
 
-- R
+- `R`
 
 ### Variables
 
@@ -135,7 +135,7 @@ K-mer database required for estimation of genomic features
 
 - `WD`: Working directory
 - `K`: K-mer size to generate the `meryl` database.
-- `REFNAME`: name of the assmebly. We generate the 
+- `REFNAME`: name of the assembly. 
 
 
 ### Code
@@ -162,10 +162,10 @@ meryl histogram ${REFNAME}.hifi.meryl | awk '{print $1,$2}' > ${REFNAME}.hifi.hi
 
 ```
 
-## Genome size, heterozygosity and repeat content estimation
+## Genome size, heterozygosity, and repeat content estimation
 
-We extract information of the HiFi reads to be able to validate the data we are generating. In addition, it allows us to generate and expectation of the genome assembly process
-by gaining infomarion about repeat content, genome size and heterozygosity.
+We extract information from the HiFi reads to be able to validate the data we are generating. In addition, it allows us to generate an expectation of the genome assembly process
+by gaining information about repeat content, genome size, and heterozygosity.
 
 
 ### Requirements
@@ -175,12 +175,12 @@ by gaining infomarion about repeat content, genome size and heterozygosity.
 
 - `WD`: Working directory
 - `K`: K-mer size used to generate the `meryl` database.
-- `REFNAME`: name of the assmebly. We generate the 
+- `REFNAME`: name of the assembly. 
 
 ### Assumptions
 
 - Given the scope and/or limitation of the projects, the code below is set up for diploid genomes, using the default parameters of Genomescope2.0. 
-- For haploid species we set up option `-p` to `1`.
+- For haploid species, we set up options `-p` to `1`.
 - We are assuming that the meryl database has been generated and exists under `$WD/info/meryl/${REFNAME}.hifi.hist`
 
 ### Code
@@ -194,7 +194,7 @@ by gaining infomarion about repeat content, genome size and heterozygosity.
 
 ## OmniC
 
-We follow the instructions that have been set up and orgenized by [Dovetail Genomics](https://omni-c.readthedocs.io/en/latest/index.html).
+We follow the instructions set up and organized by [Dovetail Genomics](https://omni-c.readthedocs.io/en/latest/index.html).
 
 
 
