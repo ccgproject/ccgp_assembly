@@ -25,7 +25,7 @@ The first thing we need to do once we receive the PacBio HiFi data is to filter 
 - bgzip 
 - Conda environment: 
     - We have set up a conda environment that is able to load all the dependencies for BLAST (V2.6)
-    - Download from [here: conda.env.ncbi216.yml](https://github.com/ccgproject/ccgp_assembly/blob/main/workflows/conda_env/)
+    - Download `conda.env.ncbi216.yml` from [here.](https://github.com/ccgproject/ccgp_assembly/blob/main/workflows/conda_env/)
 
 #### Description
 
