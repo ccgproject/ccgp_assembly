@@ -7,7 +7,7 @@ California Conservation Genomics Project (CCGP) repository for the genome assemb
 
 - [Overview](#overview)
 - [Pipeline overview](#pipeline-overview)
-- [Workflows](#workflow)
+- [Workflows](#workflows)
 - [Versioning](versions/README.md)
 - [Learn more](#learn-more)
 
