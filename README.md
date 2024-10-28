@@ -5,11 +5,11 @@ California Conservation Genomics Project (CCGP) repository for the genome assemb
 
 ## Content
 
-- [Overview](https://github.com/ccgproject/ccgp_assembly/edit/main/README.md#overview)
-- [Pipeline overview](https://github.com/ccgproject/ccgp_assembly/edit/main/README.md#pipeline-overview)
-- [Workflows](https://github.com/ccgproject/ccgp_assembly/edit/main/README.md#workflow)
+- [Overview](#overview)
+- [Pipeline overview](#pipeline-overview)
+- [Workflows](#workflow)
 - [Versioning](versions/README.md)
-- [Learn more](https://github.com/ccgproject/ccgp_assembly/edit/main/README.md#learn-more)
+- [Learn more](#learn-more)
 
 ## Overview
 
