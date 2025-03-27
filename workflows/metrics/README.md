@@ -80,7 +80,7 @@ conda deactivate
 
 #### Parsing QUAST output
 
-- Assuming QUAST runs have been done on both assemblies, [here's a script](https://github.com/ccgproject/ccgp_assembly/edit/main/workflows/scripts/parseQuast.shortmetrics.sh) that would be able to generate a summarize table (in TSV format) with the information of both assemblies.
+- Assuming QUAST runs have been done on both assemblies, [here's a script](https://github.com/ccgproject/ccgp_assembly/blob/main/workflows/metrics/scripts/parseQuast.shortmetrics.sh) that would be able to generate a summarize table (in TSV format) with the information of both assemblies.
 
 - You will be able to run the script:
 
