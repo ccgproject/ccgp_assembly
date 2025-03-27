@@ -7,7 +7,7 @@
 - [per base quality / k-mer completeness]()
 - [Functional completeness](#functional-completeness)
     - [BUSCO scores](#busco-scores)
-    - [Framseshift errors](#framsewhift-errors)
+    - [Framesshift errors](#frameshift-errors)
 - [Gap description](#gap-description)
 - [Genome mappability](#genome-mappability)
 - [Mapping quality](#mapping-quality)
